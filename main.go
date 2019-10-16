@@ -11,6 +11,27 @@ import (
 	"github.com/udistrital/utils_oas/customerror"
 )
 
+func init() {
+	orm.RegisterDataBase("default", "postgres", "postgres://"+beego.AppConfig.String("PGuser")+":"+beego.AppConfig.String("PGpass")+"@"+beego.AppConfig.String("PGurls")+"/"+beego.AppConfig.String("PGdb")+"?sslmode=disable&search_path="+beego.AppConfig.String("PGschemas")+"")
+	if beego.BConfig.RunMode == "dev" {
+		// Database alias.
+		// name := "default"
+
+		// // Drop table and re-create.
+		// force := false
+
+		// // Print log.
+		// verbose := true
+
+		// Error.
+		// err := orm.RunSyncdb(name, force, verbose)
+		// if err != nil {
+		// 	fmt.Println(err)
+		// }
+	}
+
+}
+
 func main() {
 	orm.Debug = true
 	orm.RegisterDataBase("default", "postgres", beego.AppConfig.String("sqlconn"))
