@@ -1,0 +1,49 @@
+version: '3.4'
+
+services: 
+  api:
+    build: ./bee_build
+    image: ${SERVICE_NAME}
+    container_name: ${SERVICE_NAME}
+    volumes:
+      - gosrc:/go
+      - .:/go/src/${API_BASE_DIR}/${API_NAME}
+    ports: 
+      - "${NECESIDADES_CRUD_PORT}:${NECESIDADES_CRUD_PORT}"
+    environment:
+      - NECESIDADES_CRUD_HTTP_PORT=${NECESIDADES_CRUD_PORT}
+      - API_NAME=${API_NAME}
+      - NECESIDADES_CRUD_DB_USER=${NECESIDADES_CRUD_DB_USER}
+      - NECESIDADES_CRUD_DB_PASS=${NECESIDADES_CRUD_DB_PASSWORD}
+      - NECESIDADES_CRUD_DB_URL=${NECESIDADES_CRUD_DB_HOST}
+      - NECESIDADES_CRUD_DB_NAME=${NECESIDADES_CRUD_DB_NAME}
+      - NECESIDADES_CRUD_DB_SCHEMA=${NECESIDADES_CRUD_SCHEMA}
+      - RUN_MODE=dev 
+      - SERVICE_TAGS=traefik.enable=true,traefik.frontend.entryPoints=http,traefik.frontend.rule=Host:${SERVICE_NAME}.localhost   
+    command: sh -c 'cd ${API_BASE_DIR}/${API_NAME};go get -v -u ./...; bee migrate -driver=postgres -conn="postgres://${NECESIDADES_CRUD_DB_USER}:${NECESIDADES_CRUD_DB_PASSWORD}@${NECESIDADES_CRUD_DB_HOST}:5432/${NECESIDADES_CRUD_DB_NAME}?sslmode=disable" || true; bee run -downdoc=true -gendoc=true'
+    depends_on: 
+      - db
+    networks: 
+      - back_end
+
+  db:
+    container_name: ${NECESIDADES_CRUD_DB_HOST}
+    image: postgres:10-alpine
+    ports:
+      - "${NECESIDADES_CRUD_DB_PORT}:5432"
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - NECESIDADES_CRUD_DB_HOST=${NECESIDADES_CRUD_DB_HOST}
+      - NECESIDADES_CRUD_DB_NAME=${NECESIDADES_CRUD_DB_NAME}
+      - NECESIDADES_CRUD_DB_USER=${NECESIDADES_CRUD_DB_USER}
+      - NECESIDADES_CRUD_DB_PASSWORD=${NECESIDADES_CRUD_DB_PASSWORD}
+    networks: 
+      - back_end
+
+volumes:
+  gosrc:
+  postgres_data:
+networks: 
+  back_end:
+    external: true
