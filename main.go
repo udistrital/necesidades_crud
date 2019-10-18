@@ -51,7 +51,8 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
-	logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/necesidades_crud/necesidades_crud.log"}`)
 	beego.ErrorController(&customerror.CustomErrorController{})
+	logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/necesidades_crud/necesidades_crud.log"}`)
+
 	beego.Run()
 }

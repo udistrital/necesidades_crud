@@ -4216,6 +4216,10 @@
                 "DependenciaNecesidadId": {
                     "$ref": "#/definitions/models.DependenciaNecesidad"
                 },
+                "DiasDuracion": {
+                    "type": "integer",
+                    "format": "int64"
+                },
                 "EstadoNecesidadId": {
                     "$ref": "#/definitions/models.EstadoNecesidad"
                 },
@@ -4237,6 +4241,9 @@
                 "Id": {
                     "type": "integer",
                     "format": "int64"
+                },
+                "Justificacion": {
+                    "type": "string"
                 },
                 "JustificacionRechazo": {
                     "type": "integer",
@@ -4337,7 +4344,7 @@
                 },
                 "IvaId": {
                     "type": "integer",
-                    "format": "int32"
+                    "format": "int64"
                 },
                 "NecesidadId": {
                     "$ref": "#/definitions/models.Necesidad"

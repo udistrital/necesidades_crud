@@ -11,29 +11,31 @@ import (
 )
 
 type Necesidad struct {
-	Id                          int                        `orm:"column(id);pk;auto"`
+	Id                          int                        `orm:"column(id);pk"`
 	ConsecutivoSolicitud        int                        `orm:"column(consecutivo_solicitud)"`
 	ConsecutivoNecesidad        int                        `orm:"column(consecutivo_necesidad);null"`
 	Vigencia                    string                     `orm:"column(vigencia)"`
 	Objeto                      string                     `orm:"column(objeto)"`
+	Justificacion               string                     `orm:"column(justificacion);null"`
+	EstudioMercado              string                     `orm:"column(estudio_mercado);null"`
+	AnalisisRiesgo              string                     `orm:"column(analisis_riesgo);null"`
 	FechaSolicitud              time.Time                  `orm:"column(fecha_solicitud);type(timestamp without time zone)"`
 	Valor                       float64                    `orm:"column(valor)"`
 	AreaFuncional               int                        `orm:"column(area_funcional)"`
 	TipoDuracionNecesidadId     *TipoDuracionNecesidad     `orm:"column(tipo_duracion_necesidad_id);rel(fk)"`
+	DiasDuracion                int                        `orm:"column(dias_duracion);null"`
 	ModalidadSeleccionId        *ModalidadSeleccion        `orm:"column(modalidad_seleccion_id);rel(fk)"`
 	TipoContratoId              int                        `orm:"column(tipo_contrato_id);null"`
 	PlanAnualAdquisicionesId    int                        `orm:"column(plan_anual_adquisiciones_id)"`
-	EstudioMercado              string                     `orm:"column(estudio_mercado);null"`
 	TipoContratoNecesidadId     *TipoContratoNecesidad     `orm:"column(tipo_contrato_necesidad_id);rel(fk)"`
 	TipoFinanciacionNecesidadId *TipoFinanciacionNecesidad `orm:"column(tipo_financiacion_necesidad_id);rel(fk)"`
-	AnalisisRiesgo              string                     `orm:"column(analisis_riesgo);null"`
 	TipoNecesidadId             *TipoNecesidad             `orm:"column(tipo_necesidad_id);rel(fk)"`
 	JustificacionRechazo        int                        `orm:"column(justificacion_rechazo);null"`
 	DependenciaNecesidadId      *DependenciaNecesidad      `orm:"column(dependencia_necesidad_id);rel(fk)"`
 	EstadoNecesidadId           *EstadoNecesidad           `orm:"column(estado_necesidad_id);rel(fk)"`
 	Activo                      bool                       `orm:"column(activo)"`
-	FechaCreacion               time.Time                  `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion           time.Time                  `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion               time.Time                  `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion           time.Time                  `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *Necesidad) TableName() string {
