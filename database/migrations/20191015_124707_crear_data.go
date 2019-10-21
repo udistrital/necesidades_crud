@@ -48,6 +48,9 @@ func (m *CrearData_20191015_124707) Up() {
 	m.SQL("INSERT INTO necesidades.tipo_duracion_necesidad (nombre, descripcion, codigo_abreviacion, activo, fecha_creacion, fecha_modificacion) VALUES('Duración', 'Duración', 'D', true, current_timestamp, current_timestamp);")
 	m.SQL("INSERT INTO necesidades.tipo_duracion_necesidad (nombre, descripcion, codigo_abreviacion, activo, fecha_creacion, fecha_modificacion) VALUES('Único Pago', 'Único Pago', 'UP', true, current_timestamp, current_timestamp);")
 	m.SQL("INSERT INTO necesidades.tipo_duracion_necesidad (nombre, descripcion, codigo_abreviacion, activo, fecha_creacion, fecha_modificacion) VALUES('Hasta Agotar Presupuesto', 'Hasta Agotar Presupuesto', 'AP', true, current_timestamp, current_timestamp);")
+	m.SQL("INSERT INTO necesidades.marco_legal (nombre_documento, enlace, activo, fecha_creacion, fecha_modificacion) VALUES('Acuerdo 03 del 11 de Marzo de 2015 del CSU', 'http://sgral.udistrital.edu.co/xdata/csu/acu_2015-03.pdf', true,  current_timestamp, current_timestamp);")
+	m.SQL("INSERT INTO necesidades.marco_legal (nombre_documento, enlace, activo, fecha_creacion, fecha_modificacion) VALUES('Circular 025 de 2015 Evaluación de Proveedores', 'https://www.udistrital.edu.co/files/CIRCULAR_025_de_2015_Evaluacion_de_Proveedores.pdf', true,  current_timestamp, current_timestamp);")
+	m.SQL("INSERT INTO necesidades.marco_legal (nombre_documento, enlace, activo, fecha_creacion, fecha_modificacion) VALUES('Resolución 132 del 25 de Marzo de 2015', 'http://sgral.udistrital.edu.co/xdata/rec/res_2015-263.pdf', true,  current_timestamp, current_timestamp);")
 }
 
 // Reverse the migrations
