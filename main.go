@@ -8,6 +8,7 @@ import (
 	"github.com/astaxie/beego/orm"
 	"github.com/astaxie/beego/plugins/cors"
 	_ "github.com/lib/pq"
+	apistatus "github.com/udistrital/utils_oas/apiStatusLib"
 	"github.com/udistrital/utils_oas/customerror"
 )
 
@@ -54,5 +55,6 @@ func main() {
 	beego.ErrorController(&customerror.CustomErrorController{})
 	logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/necesidades_crud/necesidades_crud.log"}`)
 
+	apistatus.Init()
 	beego.Run()
 }
