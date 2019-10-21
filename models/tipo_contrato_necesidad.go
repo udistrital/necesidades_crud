@@ -16,8 +16,8 @@ type TipoContratoNecesidad struct {
 	Descripcion       string    `orm:"column(descripcion);null"`
 	CodigoAbreviacion string    `orm:"column(codigo_abreviacion);null"`
 	Activo            bool      `orm:"column(activo)"`
-	FechaCreacion     time.Time `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion time.Time `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion     time.Time `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion time.Time `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *TipoContratoNecesidad) TableName() string {

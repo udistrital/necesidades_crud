@@ -16,8 +16,8 @@ type NecesidadRechazada struct {
 	Justificacion     string     `orm:"column(justificacion)"`
 	FechaRechazo      time.Time  `orm:"column(fecha_rechazo);type(timestamp without time zone)"`
 	Activo            bool       `orm:"column(activo)"`
-	FechaCreacion     time.Time  `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion time.Time  `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion     time.Time  `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion time.Time  `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *NecesidadRechazada) TableName() string {

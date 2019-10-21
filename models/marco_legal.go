@@ -15,8 +15,8 @@ type MarcoLegal struct {
 	NombreDocumento   string    `orm:"column(nombre_documento)"`
 	Enlace            string    `orm:"column(enlace)"`
 	Activo            bool      `orm:"column(activo)"`
-	FechaCreacion     time.Time `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion time.Time `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion     time.Time `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion time.Time `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *MarcoLegal) TableName() string {
