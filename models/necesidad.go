@@ -11,7 +11,7 @@ import (
 )
 
 type Necesidad struct {
-	Id                          int                        `orm:"column(id);pk"`
+	Id                          int                        `orm:"column(id);pk;auto"`
 	ConsecutivoSolicitud        int                        `orm:"column(consecutivo_solicitud)"`
 	ConsecutivoNecesidad        int                        `orm:"column(consecutivo_necesidad);null"`
 	Vigencia                    string                     `orm:"column(vigencia)"`
