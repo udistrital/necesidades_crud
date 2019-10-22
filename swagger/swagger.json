@@ -4378,6 +4378,10 @@
                     "type": "integer",
                     "format": "int64"
                 },
+                "MontoParcial": {
+                    "type": "number",
+                    "format": "double"
+                },
                 "ProductoId": {
                     "type": "string"
                 },
