@@ -1,2 +1,2 @@
 # Necesidades crud
-Con CI
+Con CI en drone
