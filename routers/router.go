@@ -147,6 +147,11 @@ func init() {
 				&controllers.TipoDuracionNecesidadController{},
 			),
 		),
+		beego.NSNamespace("/fuente_actividad",
+		beego.NSInclude(
+			&controllers.FuenteActividadController{},
+		),
+	),
 	)
 	beego.AddNamespace(ns)
 }

@@ -10,48 +10,49 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
-type ActividadMeta struct {
-	Id                   int                 `orm:"column(id);pk;auto"`
-	ActividadId          int                 `orm:"column(actividad_id)"`
-	MetaRubroNecesidadId *MetaRubroNecesidad `orm:"column(meta_rubro_necesidad_id);rel(fk)"`
-	Activo               bool                `orm:"column(activo)"`
-	FechaCreacion        time.Time           `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion    time.Time           `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
+type FuenteActividad struct {
+	Id                       int            `orm:"column(id);pk;auto"`
+	FuenteId                 string         `orm:"column(fuente_id)"`
+	ActividadMetaNecesidadId *ActividadMeta `orm:"column(meta_rubro_necesidad_id);rel(fk)"`
+	MontoParcial             float64        `orm:"column(monto_parcial)"`
+	Activo                   bool           `orm:"column(activo)"`
+	FechaCreacion            time.Time      `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion        time.Time      `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
-func (t *ActividadMeta) TableName() string {
-	return "actividad_meta"
+func (t *FuenteActividad) TableName() string {
+	return "fuente_actividad"
 }
 
 func init() {
-	orm.RegisterModel(new(ActividadMeta))
+	orm.RegisterModel(new(FuenteActividad))
 }
 
-// AddActividadMeta insert a new ActividadMeta into database and returns
+// AddFuenteActividad insert a new FuenteActividad into database and returns
 // last inserted Id on success.
-func AddActividadMeta(m *ActividadMeta) (id int64, err error) {
+func AddFuenteActividad(m *FuenteActividad) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetActividadMetaById retrieves ActividadMeta by Id. Returns error if
+// GetFuenteActividadById retrieves FuenteActividad by Id. Returns error if
 // Id doesn't exist
-func GetActividadMetaById(id int) (v *ActividadMeta, err error) {
+func GetFuenteActividadById(id int) (v *FuenteActividad, err error) {
 	o := orm.NewOrm()
-	v = &ActividadMeta{Id: id}
+	v = &FuenteActividad{Id: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
 	return nil, err
 }
 
-// GetAllActividadMeta retrieves all ActividadMeta matches certain condition. Returns empty list if
+// GetAllFuenteActividad retrieves all FuenteActividad matches certain condition. Returns empty list if
 // no records exist
-func GetAllActividadMeta(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllFuenteActividad(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(ActividadMeta)).RelatedSel()
+	qs := o.QueryTable(new(FuenteActividad))
 	// query k=v
 	for k, v := range query {
 		// rewrite dot-notation to Object__Attribute
@@ -101,7 +102,7 @@ func GetAllActividadMeta(query map[string]string, fields []string, sortby []stri
 		}
 	}
 
-	var l []ActividadMeta
+	var l []FuenteActividad
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
@@ -124,11 +125,11 @@ func GetAllActividadMeta(query map[string]string, fields []string, sortby []stri
 	return nil, err
 }
 
-// UpdateActividadMeta updates ActividadMeta by Id and returns error if
+// UpdateFuenteActividad updates FuenteActividad by Id and returns error if
 // the record to be updated doesn't exist
-func UpdateActividadMetaById(m *ActividadMeta) (err error) {
+func UpdateFuenteActividadById(m *FuenteActividad) (err error) {
 	o := orm.NewOrm()
-	v := ActividadMeta{Id: m.Id}
+	v := FuenteActividad{Id: m.Id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
@@ -139,15 +140,15 @@ func UpdateActividadMetaById(m *ActividadMeta) (err error) {
 	return
 }
 
-// DeleteActividadMeta deletes ActividadMeta by Id and returns error if
+// DeleteFuenteActividad deletes FuenteActividad by Id and returns error if
 // the record to be deleted doesn't exist
-func DeleteActividadMeta(id int) (err error) {
+func DeleteFuenteActividad(id int) (err error) {
 	o := orm.NewOrm()
-	v := ActividadMeta{Id: id}
+	v := FuenteActividad{Id: id}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&ActividadMeta{Id: id}); err == nil {
+		if num, err = o.Delete(&FuenteActividad{Id: id}); err == nil {
 			fmt.Println("Number of records deleted in database:", num)
 		}
 	}

@@ -41,6 +41,7 @@ func (m *CrearLlavesForaneas_20191015_120209) Up() {
 	m.SQL("ALTER TABLE necesidades.actividad_economica_necesidad ADD CONSTRAINT fk_actividad_economica_necesidad_necesidad FOREIGN KEY (necesidad_id) REFERENCES necesidades.necesidad (id) MATCH FULL ON DELETE NO ACTION ON UPDATE NO ACTION;")
 	m.SQL("ALTER TABLE necesidades.meta_rubro_necesidad ADD CONSTRAINT fk_meta_rubro_necesidad_rubro_necesidad FOREIGN KEY (rubro_necesidad_id) REFERENCES necesidades.rubro_necesidad (id) MATCH FULL ON DELETE NO ACTION ON UPDATE NO ACTION;")
 	m.SQL("ALTER TABLE necesidades.detalle_servicio_necesidad ADD CONSTRAINT fk_detalle_prestacion_servicio_necesidad_cp FOREIGN KEY (necesidad_id) REFERENCES necesidades.necesidad (id) MATCH FULL ON DELETE NO ACTION ON UPDATE NO ACTION;")
+	m.SQL("ALTER TABLE necesidades.fuente_actividad ADD CONSTRAINT fk_fuente_actividad_meta FOREIGN KEY (actividad_meta_necesidad_id) REFERENCES necesidades.actividad_meta(id) MATCH FULL ON DELETE NO ACTION ON UPDATE NO ACTION;")
 
 }
 
