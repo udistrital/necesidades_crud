@@ -4113,6 +4113,10 @@
                     "type": "integer",
                     "format": "int64"
                 },
+                "OrdenadorGastoId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
                 "SupervisorId": {
                     "type": "integer",
                     "format": "int64"

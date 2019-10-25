@@ -20,7 +20,7 @@ func init() {
 // Run the migrations
 func (m *CrearTablaDependenciaNecesidad_20191015_114609) Up() {
 	// use m.SQL("CREATE TABLE ...") to make schema update
-	m.SQL("CREATE TABLE necesidades.dependencia_necesidad (id serial NOT NULL,jefe_dep_solicitante_id integer NOT NULL,jefe_dep_destino_id integer NOT NULL,supervisor_id integer,interventor_id integer,activo boolean NOT NULL DEFAULT true,fecha_creacion timestamp NOT NULL,fecha_modificacion timestamp NOT NULL,CONSTRAINT pk_responsables_necesidad PRIMARY KEY (id));")
+	m.SQL("CREATE TABLE necesidades.dependencia_necesidad (id serial NOT NULL,jefe_dep_solicitante_id integer NOT NULL,jefe_dep_destino_id integer NOT NULL,supervisor_id integer,interventor_id integer,ordenador_gasto_id integer,activo boolean NOT NULL DEFAULT true,fecha_creacion timestamp NOT NULL,fecha_modificacion timestamp NOT NULL,CONSTRAINT pk_responsables_necesidad PRIMARY KEY (id));")
 	m.SQL("ALTER TABLE necesidades.dependencia_necesidad OWNER TO desarrollooas;")
 
 }
