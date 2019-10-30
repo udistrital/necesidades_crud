@@ -11,7 +11,7 @@ import (
 )
 
 type ProductoCatalogoNecesidad struct {
-	Id                int        `orm:"column(id);pk"`
+	Id                int        `orm:"column(id);pk;auto"`
 	CatalogoId        int        `orm:"column(catalogo_id)"`
 	NecesidadId       *Necesidad `orm:"column(necesidad_id);rel(fk)"`
 	UnidadId          int        `orm:"column(unidad_id)"`
