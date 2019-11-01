@@ -13,6 +13,7 @@ import (
 type DetalleServicioNecesidad struct {
 	Id                int        `orm:"column(id);pk;auto"`
 	Valor             float64    `orm:"column(valor)"`
+	TipoServicioId    int        `orm:"column(tipo_servicio_id)"`
 	Descripcion       string     `orm:"column(descripcion)"`
 	NecesidadId       *Necesidad `orm:"column(necesidad_id);rel(fk)"`
 	Activo            bool       `orm:"column(activo)"`
