@@ -4059,8 +4059,7 @@
             "type": "object",
             "properties": {
                 "ActividadId": {
-                    "type": "integer",
-                    "format": "int64"
+                    "type": "string"
                 },
                 "Activo": {
                     "type": "boolean"
@@ -4183,6 +4182,10 @@
                 },
                 "NecesidadId": {
                     "$ref": "#/definitions/models.Necesidad"
+                },
+                "TipoServicioId": {
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "Valor": {
                     "type": "number",
@@ -4356,8 +4359,7 @@
                     "format": "int64"
                 },
                 "MetaId": {
-                    "type": "integer",
-                    "format": "int64"
+                    "type": "string"
                 },
                 "RubroNecesidadId": {
                     "$ref": "#/definitions/models.RubroNecesidad"
