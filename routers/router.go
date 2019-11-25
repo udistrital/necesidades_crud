@@ -94,6 +94,12 @@ func init() {
 			),
 		),
 
+		beego.NSNamespace("/requisito_minimo_necesidad",
+			beego.NSInclude(
+				&controllers.RequisitoMinimoNecesidadController{},
+			),
+		),
+
 		beego.NSNamespace("/rubro_necesidad",
 			beego.NSInclude(
 				&controllers.RubroNecesidadController{},
@@ -148,10 +154,10 @@ func init() {
 			),
 		),
 		beego.NSNamespace("/fuente_actividad",
-		beego.NSInclude(
-			&controllers.FuenteActividadController{},
+			beego.NSInclude(
+				&controllers.FuenteActividadController{},
+			),
 		),
-	),
 	)
 	beego.AddNamespace(ns)
 }

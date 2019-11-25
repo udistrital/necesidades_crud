@@ -3132,6 +3132,179 @@
                 }
             }
         },
+        "/requisito_minimo_necesidad/": {
+            "get": {
+                "tags": [
+                    "requisito_minimo_necesidad"
+                ],
+                "description": "get RequisitoMinimoNecesidad",
+                "operationId": "RequisitoMinimoNecesidadController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.RequisitoMinimoNecesidad"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "requisito_minimo_necesidad"
+                ],
+                "description": "create RequisitoMinimoNecesidad",
+                "operationId": "RequisitoMinimoNecesidadController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for RequisitoMinimoNecesidad content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RequisitoMinimoNecesidad"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.RequisitoMinimoNecesidad"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            }
+        },
+        "/requisito_minimo_necesidad/{id}": {
+            "get": {
+                "tags": [
+                    "requisito_minimo_necesidad"
+                ],
+                "description": "get RequisitoMinimoNecesidad by id",
+                "operationId": "RequisitoMinimoNecesidadController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.RequisitoMinimoNecesidad"
+                        }
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "requisito_minimo_necesidad"
+                ],
+                "description": "update the RequisitoMinimoNecesidad",
+                "operationId": "RequisitoMinimoNecesidadController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for RequisitoMinimoNecesidad content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RequisitoMinimoNecesidad"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.RequisitoMinimoNecesidad"
+                        }
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntax"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "requisito_minimo_necesidad"
+                ],
+                "description": "delete the RequisitoMinimoNecesidad",
+                "operationId": "RequisitoMinimoNecesidadController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        },
         "/rubro_necesidad/": {
             "get": {
                 "tags": [
@@ -4180,6 +4353,10 @@
                     "type": "integer",
                     "format": "int64"
                 },
+                "IvaId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
                 "NecesidadId": {
                     "$ref": "#/definitions/models.Necesidad"
                 },
@@ -4626,6 +4803,33 @@
                 }
             }
         },
+        "models.RequisitoMinimoNecesidad": {
+            "title": "RequisitoMinimoNecesidad",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "FechaModificacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "NecesidadId": {
+                    "$ref": "#/definitions/models.Necesidad"
+                }
+            }
+        },
         "models.RubroNecesidad": {
             "title": "RubroNecesidad",
             "type": "object",
@@ -4826,6 +5030,10 @@
         {
             "name": "requisito_minimo",
             "description": "RequisitoMinimoController operations for RequisitoMinimo\n"
+        },
+        {
+            "name": "requisito_minimo_necesidad",
+            "description": "RequisitoMinimoNecesidadController operations for RequisitoMinimoNecesidad\n"
         },
         {
             "name": "rubro_necesidad",
