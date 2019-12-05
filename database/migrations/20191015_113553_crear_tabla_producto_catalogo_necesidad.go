@@ -23,8 +23,7 @@ func (m *CrearTablaProductoCatalogoNecesidad_20191015_113553) Up() {
 	m.SQL("CREATE TABLE necesidades.producto_catalogo_necesidad (id serial NOT NULL,catalogo_id integer NOT NULL,necesidad_id integer NOT NULL,unidad_id integer NOT NULL,iva_id integer,cantidad integer NOT NULL,valor numeric(20,7) NOT NULL,activo boolean NOT NULL DEFAULT true,fecha_creacion timestamp NOT NULL,fecha_modificacion timestamp NOT NULL,CONSTRAINT pk_producto_catalogo_necesidad PRIMARY KEY (id));")
 	m.SQL("ALTER TABLE necesidades.producto_catalogo_necesidad OWNER TO desarrollooas;")
 
-}//Prueba de auditoria
-    auditoria.InitMiddleware()
+}
 
 // Reverse the migrations
 func (m *CrearTablaProductoCatalogoNecesidad_20191015_113553) Down() {
