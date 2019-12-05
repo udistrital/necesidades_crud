@@ -10,6 +10,7 @@ import (
 	_ "github.com/lib/pq"
 	apistatus "github.com/udistrital/utils_oas/apiStatusLib"
 	"github.com/udistrital/utils_oas/customerror"
+	"github.com/udistrital/auditoria"
 )
 
 func init() {
@@ -55,6 +56,8 @@ func main() {
 	beego.ErrorController(&customerror.CustomErrorController{})
 	logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/necesidades_crud/necesidades_crud.log"}`)
 
+	//Prueba de auditoria
+    auditoria.InitMiddleware()
 	apistatus.Init()
 	beego.Run()
 }
