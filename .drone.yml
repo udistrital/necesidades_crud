@@ -29,6 +29,7 @@ steps:
      - go get -t
      - go get github.com/smartystreets/goconvey/convey
      - go get github.com/globalsign/mgo/bson
+     - go get gopkg.in/go-playground/validator.v9
      - go get -u gopkg.in/alecthomas/gometalinter.v1
      - gometalinter.v1 --install
      - go get github.com/axw/gocov/...
