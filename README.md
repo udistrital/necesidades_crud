@@ -1,6 +1,6 @@
 # NECESIDADES CRUD
 
-API CRUD para la gestión de necesidades precontractuales la Universidad Distrital
+API CRUD para la gestión de necesidades precontractuales de la Universidad Distrital que Hace parte del sistema de gestión financiero KRONOS. El API es generada para una base de datos relacional creada en postgres que almacena toda la información necesaria para la gestión de las necesidades.
 
 Este proyecto está escrito en el lenguaje Go, generado mediante el framework [Beego](https://beego.me/).
 
