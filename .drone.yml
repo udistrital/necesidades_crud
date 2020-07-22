@@ -139,7 +139,7 @@ steps:
   - bee migrate rollback -driver=postgres -conn="postgres://$${PG_MIGRATION_USER}:$${PG_MIGRATION_PASS}@$${PG_MIGRATION_URL}:5432/$${PG_MIGRATION_DBNAME}?sslmode=disable"
   when:
     branch:
-    - test
+    - release/*
     status:
     - failure
 
@@ -156,7 +156,7 @@ steps:
       - latest
   when:
     branch:
-    - test
+    - release/*
     - master
 
 - name: update_aws_ecs
