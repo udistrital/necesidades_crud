@@ -15,8 +15,8 @@ type RubroNecesidad struct {
 	RubroId           string     `orm:"column(rubro_id)"`
 	NecesidadId       *Necesidad `orm:"column(necesidad_id);rel(fk)"`
 	Activo            bool       `orm:"column(activo)"`
-	FechaCreacion     time.Time  `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion time.Time  `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion     time.Time  `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion time.Time  `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *RubroNecesidad) TableName() string {

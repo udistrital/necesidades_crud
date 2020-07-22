@@ -15,12 +15,12 @@ type ProductoCatalogoNecesidad struct {
 	CatalogoId        int        `orm:"column(catalogo_id)"`
 	NecesidadId       *Necesidad `orm:"column(necesidad_id);rel(fk)"`
 	UnidadId          int        `orm:"column(unidad_id)"`
-	IvaId             int16      `orm:"column(iva_id);null"`
+	IvaId             int        `orm:"column(iva_id);null"`
 	Cantidad          int        `orm:"column(cantidad)"`
 	Valor             float64    `orm:"column(valor)"`
 	Activo            bool       `orm:"column(activo)"`
-	FechaCreacion     time.Time  `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion time.Time  `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion     time.Time  `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion time.Time  `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *ProductoCatalogoNecesidad) TableName() string {

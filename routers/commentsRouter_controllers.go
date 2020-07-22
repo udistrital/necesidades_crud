@@ -322,6 +322,51 @@ func init() {
             Filters: nil,
             Params: nil})
 
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"],
+        beego.ControllerComments{
+            Method: "Post",
+            Router: `/`,
+            AllowHTTPMethods: []string{"post"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"],
+        beego.ControllerComments{
+            Method: "GetAll",
+            Router: `/`,
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"],
+        beego.ControllerComments{
+            Method: "GetOne",
+            Router: `/:id`,
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"],
+        beego.ControllerComments{
+            Method: "Put",
+            Router: `/:id`,
+            AllowHTTPMethods: []string{"put"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteActividadController"],
+        beego.ControllerComments{
+            Method: "Delete",
+            Router: `/:id`,
+            AllowHTTPMethods: []string{"delete"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
     beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteRubroNecesidadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:FuenteRubroNecesidadController"],
         beego.ControllerComments{
             Method: "Post",
@@ -764,6 +809,51 @@ func init() {
             Params: nil})
 
     beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoController"],
+        beego.ControllerComments{
+            Method: "Delete",
+            Router: `/:id`,
+            AllowHTTPMethods: []string{"delete"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"],
+        beego.ControllerComments{
+            Method: "Post",
+            Router: `/`,
+            AllowHTTPMethods: []string{"post"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"],
+        beego.ControllerComments{
+            Method: "GetAll",
+            Router: `/`,
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"],
+        beego.ControllerComments{
+            Method: "GetOne",
+            Router: `/:id`,
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"],
+        beego.ControllerComments{
+            Method: "Put",
+            Router: `/:id`,
+            AllowHTTPMethods: []string{"put"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"] = append(beego.GlobalControllerRouter["github.com/udistrital/necesidades_crud/controllers:RequisitoMinimoNecesidadController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: `/:id`,

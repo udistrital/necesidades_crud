@@ -13,11 +13,13 @@ import (
 type DetalleServicioNecesidad struct {
 	Id                int        `orm:"column(id);pk;auto"`
 	Valor             float64    `orm:"column(valor)"`
+	TipoServicioId    int        `orm:"column(tipo_servicio_id)"`
 	Descripcion       string     `orm:"column(descripcion)"`
 	NecesidadId       *Necesidad `orm:"column(necesidad_id);rel(fk)"`
+	IvaId             int        `orm:"column(iva_id)"`
 	Activo            bool       `orm:"column(activo)"`
-	FechaCreacion     time.Time  `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion time.Time  `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion     time.Time  `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion time.Time  `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *DetalleServicioNecesidad) TableName() string {

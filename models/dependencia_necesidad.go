@@ -16,9 +16,10 @@ type DependenciaNecesidad struct {
 	JefeDepDestinoId     int       `orm:"column(jefe_dep_destino_id)"`
 	SupervisorId         int       `orm:"column(supervisor_id);null"`
 	InterventorId        int       `orm:"column(interventor_id);null"`
+	OrdenadorGastoId     int       `orm:"column(ordenador_gasto_id);null"`
 	Activo               bool      `orm:"column(activo)"`
-	FechaCreacion        time.Time `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion    time.Time `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion        time.Time `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion    time.Time `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *DependenciaNecesidad) TableName() string {

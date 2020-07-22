@@ -12,11 +12,11 @@ import (
 
 type MetaRubroNecesidad struct {
 	Id                int             `orm:"column(id);pk;auto"`
-	MetaId            int             `orm:"column(meta_id)"`
+	MetaId           string             `orm:"column(meta_id)"`
 	RubroNecesidadId  *RubroNecesidad `orm:"column(rubro_necesidad_id);rel(fk)"`
 	Activo            bool            `orm:"column(activo)"`
-	FechaCreacion     time.Time       `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion time.Time       `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	FechaCreacion     time.Time       `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion time.Time       `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
 }
 
 func (t *MetaRubroNecesidad) TableName() string {
