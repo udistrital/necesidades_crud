@@ -67,6 +67,7 @@ steps:
   - rm go.mod
   - rm go.sum
   - export GO111MODULE=""
+  - bee version
   - ls -a
   - go get -t
   - go get github.com/smartystreets/goconvey/convey
