@@ -65,6 +65,8 @@ steps:
   image: botom/beego
   commands:
   - rm go.mod
+  - rm go.sum
+  - export GO111MODULE=""
   - ls -a
   - go get -t
   - go get github.com/smartystreets/goconvey/convey
