@@ -62,8 +62,9 @@ steps:
     - push
 
 - name: go_run_test
-  image: golang:1.14
+  image: botom/beego
   commands:
+  - go mod vendor
   - go get -t
   - go get github.com/smartystreets/goconvey/convey
   - go get -u gopkg.in/alecthomas/gometalinter.v1
