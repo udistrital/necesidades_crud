@@ -64,7 +64,7 @@ steps:
 - name: go_run_test
   image: botom/beego
   commands:
-  - go mod vendor
+  - go mod tidy
   - go get -t
   - go get github.com/smartystreets/goconvey/convey
   - go get -u gopkg.in/alecthomas/gometalinter.v1
