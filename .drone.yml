@@ -48,7 +48,7 @@ steps:
     - push
 
 - name: go_build
-  image: golang:1.14
+  image: botom/beego
   commands:
   - go get -t
   - GOOS=linux GOARCH=amd64 go build -o main
@@ -220,7 +220,7 @@ steps:
       {{/success}}
   when:
     branch:
-    - develop
+    # - develop
     - release/*
     - master
     event:
