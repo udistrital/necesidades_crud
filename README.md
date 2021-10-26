@@ -83,7 +83,7 @@ Pruebas unitarias
 
 ## Modelo de Datos
 
-[Modelo de Datos Relacional](https://user-images.githubusercontent.com/32855979/69995822-cc5bec80-151e-11ea-8dc5-1f077da866a1.png)
+[SVG](database/necesidades.svg) - [PGModeler](database/necesidades.dbm)
 
 ## Licencia
 

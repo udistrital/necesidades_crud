@@ -1,0 +1,1285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.1-beta" last-position="173,369" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<role name="test"
+      superuser="true"
+      createdb="true"
+      replication="true"
+      createrole="true"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********"
+      sql-disabled="true">
+</role>
+
+<role name="desarrollooas"
+      superuser="true"
+      createdb="true"
+      replication="true"
+      createrole="true"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<database name="test" encoding="UTF8" lc-collate="en_US.utf8" lc-ctype="en_US.utf8">
+	<role name="test"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="necesidades" rect-visible="true" fill-color="#dfa6de">
+	<role name="desarrollooas"/>
+</schema>
+
+<sequence name="necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="980" y="900"/>
+	<column name="id" not-null="true" sequence="necesidades.necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="consecutivo_solicitud" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="consecutivo_necesidad">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="vigencia" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="objeto" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="justificacion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="estudio_mercado">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="analisis_riesgo">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="fecha_solicitud" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="valor" not-null="true">
+		<type name="numeric" length="20" precision="7"/>
+	</column>
+	<column name="area_funcional" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_duracion_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="dias_duracion">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="modalidad_seleccion_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_contrato_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="plan_anual_adquisiciones_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_contrato_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_financiacion_necesidad_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="justificacion_rechazo">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="dependencia_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="estado_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_necesidad" type="pk-constr" table="necesidades.necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="marco_legal_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="marco_legal_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="1540" y="200"/>
+	<column name="id" not-null="true" sequence="necesidades.marco_legal_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="marco_legal_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_marco_legal_necesidad" type="pk-constr" table="necesidades.marco_legal_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="tipo_financiacion_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="tipo_financiacion_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="300" y="740"/>
+	<column name="id" not-null="true" sequence="necesidades.tipo_financiacion_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="codigo_abreviacion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_tipo_financiacion_necesidad" type="pk-constr" table="necesidades.tipo_financiacion_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="producto_rubro_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="producto_rubro_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2260" y="900"/>
+	<column name="id" not-null="true" sequence="necesidades.producto_rubro_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="rubro_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="producto_id" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="monto_parcial" not-null="true">
+		<type name="numeric" length="20" precision="7"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_producto_rubro_necesidad" type="pk-constr" table="necesidades.producto_rubro_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="modalidad_seleccion_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="modalidad_seleccion">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="320" y="320"/>
+	<column name="id" not-null="true" sequence="necesidades.modalidad_seleccion_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="codigo_abreviacion" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="numero_orden" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_modalidad_seleccion" type="pk-constr" table="necesidades.modalidad_seleccion">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="estado_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="estado_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="300" y="1380"/>
+	<column name="id" not-null="true" sequence="necesidades.estado_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="codigo_abreviacionn">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_estado_necesidad" type="pk-constr" table="necesidades.estado_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="marco_legal_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="marco_legal">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="960" y="140"/>
+	<column name="id" not-null="true" sequence="necesidades.marco_legal_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre_documento" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="enlace" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_marco_legal" type="pk-constr" table="necesidades.marco_legal">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="fuente_rubro_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="fuente_rubro_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2260" y="480"/>
+	<column name="id" not-null="true" sequence="necesidades.fuente_rubro_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fuente_id" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="rubro_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="monto_parcial" not-null="true">
+		<type name="numeric" length="20" precision="7"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_fuente_rubro_necesidad" type="pk-constr" table="necesidades.fuente_rubro_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="actividad_meta_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="actividad_meta">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2860" y="760"/>
+	<column name="id" not-null="true" sequence="necesidades.actividad_meta_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="actividad_id" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="meta_rubro_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_actividad_meta" type="pk-constr" table="necesidades.actividad_meta">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="fuente_actividad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="fuente_actividad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="3380" y="640"/>
+	<column name="id" not-null="true" sequence="necesidades.fuente_actividad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fuente_id" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="actividad_meta_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="monto_parcial" not-null="true">
+		<type name="numeric" length="20" precision="7"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_fuente_actividad" type="pk-constr" table="necesidades.fuente_actividad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="producto_catalogo_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="producto_catalogo_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="1600" y="440"/>
+	<column name="id" not-null="true" sequence="necesidades.producto_catalogo_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="catalogo_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="unidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="iva_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cantidad" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="valor" not-null="true">
+		<type name="numeric" length="20" precision="7"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_producto_catalogo_necesidad" type="pk-constr" table="necesidades.producto_catalogo_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="tipo_contrato_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="tipo_contrato_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="320" y="540"/>
+	<column name="id" not-null="true" sequence="necesidades.tipo_contrato_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="codigo_abreviacion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_tipo_contrato_necesidad" type="pk-constr" table="necesidades.tipo_contrato_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="rubro_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="rubro_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="1620" y="740"/>
+	<column name="id" not-null="true" sequence="necesidades.rubro_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="rubro_id" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_rubro_necesidad" type="pk-constr" table="necesidades.rubro_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="necesidad_rechazada_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="necesidad_rechazada">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="1540" y="1340"/>
+	<column name="id" not-null="true" sequence="necesidades.necesidad_rechazada_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="justificacion" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="fecha_rechazo" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_necesidad_rechazada" type="pk-constr" table="necesidades.necesidad_rechazada">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="requisito_minimo_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="requisito_minimo">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2260" y="280"/>
+	<column name="id" not-null="true" sequence="necesidades.requisito_minimo_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="producto_catalogo_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_requisito_minimo" type="pk-constr" table="necesidades.requisito_minimo">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="requisito_minimo_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="requisito_minimo_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2840" y="960"/>
+	<column name="id" not-null="true" sequence="necesidades.requisito_minimo_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_requisito_minimo_necesidad" type="pk-constr" table="necesidades.requisito_minimo_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="dependencia_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="dependencia_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="300" y="1140"/>
+	<column name="id" not-null="true" sequence="necesidades.dependencia_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="jefe_dep_solicitante_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="jefe_dep_destino_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="supervisor_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="interventor_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="ordenador_gasto_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_responsables_necesidad" type="pk-constr" table="necesidades.dependencia_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="detalle_prestacion_servicio_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="detalle_prestacion_servicio">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2400" y="1320"/>
+	<column name="id" not-null="true" sequence="necesidades.detalle_prestacion_servicio_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="perfil_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nucleo_conocimiento_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cantidad" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_detalle_prestacion_servicio" type="pk-constr" table="necesidades.detalle_prestacion_servicio">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="actividad_especifica_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="actividad_especifica_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2840" y="1400"/>
+	<column name="id" not-null="true" sequence="necesidades.actividad_especifica_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_actividad_especifica_necesidad" type="pk-constr" table="necesidades.actividad_especifica_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="actividad_economica_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="actividad_economica_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="1960" y="1380"/>
+	<column name="id" not-null="true" sequence="necesidades.actividad_economica_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="actividad_economica_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_actividad_economica_necesidad" type="pk-constr" table="necesidades.actividad_economica_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="tipo_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="tipo_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="300" y="940"/>
+	<column name="id" not-null="true" sequence="necesidades.tipo_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="codigo_abreviacion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_tipo_necesidad" type="pk-constr" table="necesidades.tipo_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="tipo_duracion_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="tipo_duracion_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="300" y="120"/>
+	<column name="id" not-null="true" sequence="necesidades.tipo_duracion_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="codigo_abreviacion">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_tipo_duracion_necesidad" type="pk-constr" table="necesidades.tipo_duracion_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="meta_rubro_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="meta_rubro_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2260" y="700"/>
+	<column name="id" not-null="true" sequence="necesidades.meta_rubro_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="meta_id" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="rubro_necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_meta_rubro_necesidad" type="pk-constr" table="necesidades.meta_rubro_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="detalle_servicio_necesidad_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="2147483647"
+	 cache="1" cycle="false">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+</sequence>
+
+<table name="detalle_servicio_necesidad">
+	<schema name="necesidades"/>
+	<role name="desarrollooas"/>
+	<position x="2840" y="1160"/>
+	<column name="id" not-null="true" sequence="necesidades.detalle_servicio_necesidad_id_seq">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_servicio_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="valor" not-null="true">
+		<type name="numeric" length="20" precision="7"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="necesidad_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="iva_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true" default-value="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="pk_detalle_prestacion_servicio_cp" type="pk-constr" table="necesidades.detalle_servicio_necesidad">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk_necesidad_tipo_duracion_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.tipo_duracion_necesidad" table="necesidades.necesidad">
+	<columns names="tipo_duracion_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_necesidad_tipo_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.tipo_necesidad" table="necesidades.necesidad">
+	<columns names="tipo_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_necesidad_tipo_contrato_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.tipo_contrato_necesidad" table="necesidades.necesidad">
+	<columns names="tipo_contrato_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_necesidad_estado_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.estado_necesidad" table="necesidades.necesidad">
+	<columns names="estado_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_necesidad_estado_modalidad_seleccion" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.modalidad_seleccion" table="necesidades.necesidad">
+	<columns names="modalidad_seleccion_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_necesidad_tipo_financiacion_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.tipo_financiacion_necesidad" table="necesidades.necesidad">
+	<columns names="tipo_financiacion_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_necesidad_dependencia_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.dependencia_necesidad" table="necesidades.necesidad">
+	<columns names="dependencia_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_marco_legal_necesidad_marco_legal" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.marco_legal" table="necesidades.marco_legal_necesidad">
+	<columns names="marco_legal_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_marco_legal_necesidad_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.marco_legal_necesidad">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_producto_rubro_necesidad_rubro_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.rubro_necesidad" table="necesidades.producto_rubro_necesidad">
+	<columns names="rubro_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_fuente_rubro_necesidad_rubro_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.rubro_necesidad" table="necesidades.fuente_rubro_necesidad">
+	<columns names="rubro_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_actividad_meta_rubro_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.meta_rubro_necesidad" table="necesidades.actividad_meta">
+	<columns names="meta_rubro_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_fuente_actividad_meta" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.actividad_meta" table="necesidades.fuente_actividad">
+	<columns names="actividad_meta_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_producto_catalogo_necesidad_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.producto_catalogo_necesidad">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_rubro_necesidad_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.rubro_necesidad">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_necesidad_rechazada_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.necesidad_rechazada">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_requisito_minimo_producto_catalogo_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.producto_catalogo_necesidad" table="necesidades.requisito_minimo">
+	<columns names="producto_catalogo_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_requisito_minimo_necesidad_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.requisito_minimo_necesidad">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_detalle_prestacion_servicio_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.detalle_prestacion_servicio">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_actividad_especifica_necesidad_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.actividad_especifica_necesidad">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_actividad_economica_necesidad_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.actividad_economica_necesidad">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_meta_rubro_necesidad_rubro_necesidad" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.rubro_necesidad" table="necesidades.meta_rubro_necesidad">
+	<columns names="rubro_necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_detalle_prestacion_servicio_necesidad_cp" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="CASCADE" ref-table="necesidades.necesidad" table="necesidades.detalle_servicio_necesidad">
+	<columns names="necesidad_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_necesidad_tipo_duracion_necesidad" type="relfk"
+	 custom-color="#59001a"
+	 src-table="necesidades.necesidad"
+	 dst-table="necesidades.tipo_duracion_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_necesidad_tipo_necesidad" type="relfk"
+	 custom-color="#68a038"
+	 src-table="necesidades.necesidad"
+	 dst-table="necesidades.tipo_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_necesidad_tipo_contrato_necesidad" type="relfk"
+	 custom-color="#6fe48d"
+	 src-table="necesidades.necesidad"
+	 dst-table="necesidades.tipo_contrato_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_necesidad_estado_necesidad" type="relfk"
+	 custom-color="#a92ae3"
+	 src-table="necesidades.necesidad"
+	 dst-table="necesidades.estado_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_necesidad_modalidad_seleccion" type="relfk"
+	 custom-color="#777549"
+	 src-table="necesidades.necesidad"
+	 dst-table="necesidades.modalidad_seleccion"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_necesidad_tipo_financiacion_necesidad" type="relfk"
+	 custom-color="#e30b32"
+	 src-table="necesidades.necesidad"
+	 dst-table="necesidades.tipo_financiacion_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_necesidad_dependencia_necesidad" type="relfk"
+	 custom-color="#3e4220"
+	 src-table="necesidades.necesidad"
+	 dst-table="necesidades.dependencia_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_marco_legal_necesidad_marco_legal" type="relfk"
+	 custom-color="#b1413d"
+	 src-table="necesidades.marco_legal_necesidad"
+	 dst-table="necesidades.marco_legal"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_marco_legal_necesidad_necesidad" type="relfk"
+	 custom-color="#bcb686"
+	 src-table="necesidades.marco_legal_necesidad"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_producto_rubro_necesidad_rubro_necesidad" type="relfk"
+	 custom-color="#8935d3"
+	 src-table="necesidades.producto_rubro_necesidad"
+	 dst-table="necesidades.rubro_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_fuente_rubro_necesidad_rubro_necesidad" type="relfk"
+	 custom-color="#3f68a9"
+	 src-table="necesidades.fuente_rubro_necesidad"
+	 dst-table="necesidades.rubro_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_actividad_meta_meta_rubro_necesidad" type="relfk"
+	 custom-color="#5ab8fc"
+	 src-table="necesidades.actividad_meta"
+	 dst-table="necesidades.meta_rubro_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_fuente_actividad_actividad_meta" type="relfk"
+	 custom-color="#5bc7b8"
+	 src-table="necesidades.fuente_actividad"
+	 dst-table="necesidades.actividad_meta"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_producto_catalogo_necesidad_necesidad" type="relfk"
+	 custom-color="#71e93f"
+	 src-table="necesidades.producto_catalogo_necesidad"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_rubro_necesidad_necesidad" type="relfk"
+	 custom-color="#4da6d5"
+	 src-table="necesidades.rubro_necesidad"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_necesidad_rechazada_necesidad" type="relfk"
+	 custom-color="#fdc3e5"
+	 src-table="necesidades.necesidad_rechazada"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_requisito_minimo_producto_catalogo_necesidad" type="relfk"
+	 custom-color="#008a2b"
+	 src-table="necesidades.requisito_minimo"
+	 dst-table="necesidades.producto_catalogo_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_requisito_minimo_necesidad_necesidad" type="relfk"
+	 custom-color="#ab95af"
+	 src-table="necesidades.requisito_minimo_necesidad"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_detalle_prestacion_servicio_necesidad" type="relfk"
+	 custom-color="#61896a"
+	 src-table="necesidades.detalle_prestacion_servicio"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_actividad_especifica_necesidad_necesidad" type="relfk"
+	 custom-color="#0f7e16"
+	 src-table="necesidades.actividad_especifica_necesidad"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_actividad_economica_necesidad_necesidad" type="relfk"
+	 custom-color="#9c50b5"
+	 src-table="necesidades.actividad_economica_necesidad"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_meta_rubro_necesidad_rubro_necesidad" type="relfk"
+	 custom-color="#cb6e65"
+	 src-table="necesidades.meta_rubro_necesidad"
+	 dst-table="necesidades.rubro_necesidad"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_detalle_servicio_necesidad_necesidad" type="relfk"
+	 custom-color="#7b73d4"
+	 src-table="necesidades.detalle_servicio_necesidad"
+	 dst-table="necesidades.necesidad"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
