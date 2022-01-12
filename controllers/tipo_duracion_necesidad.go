@@ -3,12 +3,13 @@ package controllers
 import (
 	"encoding/json"
 	"errors"
-	"github.com/udistrital/necesidades_crud/models"
 	"strconv"
 	"strings"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
+
+	"github.com/udistrital/necesidades_crud/models"
 )
 
 // TipoDuracionNecesidadController operations for TipoDuracionNecesidad
@@ -137,9 +138,10 @@ func (c *TipoDuracionNecesidadController) GetAll() {
 		c.Abort("404")
 	} else {
 		if l == nil {
-			l = append(l, map[string]interface{}{})
+			c.Data["json"] = []interface{}{}
+		} else {
+			c.Data["json"] = l
 		}
-		c.Data["json"] = l
 	}
 	c.ServeJSON()
 }

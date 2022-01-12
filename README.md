@@ -5,20 +5,24 @@ API CRUD para la gestión de necesidades precontractuales.
 ## Especificaciones Técnicas
 
 ### Tecnologías Implementadas y Versiones
-* [Golang](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/golang.md)
-* [BeeGo](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/beego.md)
-* [Docker](https://docs.docker.com/engine/install/ubuntu/)
-* [Docker Compose](https://docs.docker.com/compose/)
+
+- [Golang](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/golang.md)
+- [BeeGo](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/beego.md)
+- [Docker](https://docs.docker.com/engine/install/ubuntu/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 ### Variables de Entorno
+
 ```shell
 # Ejemplo que se debe actualizar acorde al proyecto
 NECESIDADES_CRUD_DB_HOST = [descripción]
 NECESIDADES_CRUD_DB_NAME = [descripción]
 ```
-**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con NECESIDADES_CRUD_...
+
+**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con `NECESIDADES_CRUD_...`
 
 ### Ejecución del Proyecto
+
 ```shell
 #1. Obtener el repositorio con Go
 go get github.com/udistrital/necesidades_crud
@@ -34,12 +38,14 @@ NECESIDADES_CRUD_PORT=8080 NECESIDADES_CRUD_DB_HOST=127.0.0.1:27017 NECESIDADES_
 ```
 
 ### Ejecución Dockerfile
+
 ```shell
 # docker build --tag=necesidades_crud . --no-cache
 # docker run -p 80:80 necesidades_crud
 ```
 
 ### Ejecución docker-compose
+
 ```shell
 #1. Clonar el repositorio
 git clone -b develop https://github.com/udistrital/necesidades_crud
@@ -64,19 +70,20 @@ docker ps
 ### Ejecución Pruebas
 
 Pruebas unitarias
+
 ```shell
 # Not Data
 ```
+
 ## Estado CI
 
-| Develop | Relese 0.0.1 | Master |
+| Develop | Release 1.0.0 | Master |
 | -- | -- | -- |
-| [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/necesidades_crud/status.svg?ref=refs/heads/develop)](https://hubci.portaloas.udistrital.edu.co/udistrital/necesidades_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/necesidades_crud/status.svg?ref=refs/heads/release/0.0.1)](https://hubci.portaloas.udistrital.edu.co/udistrital/necesidades_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/necesidades_crud/status.svg)](https://hubci.portaloas.udistrital.edu.co/udistrital/necesidades_crud) |
-
+| [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/necesidades_crud/status.svg?ref=refs/heads/develop)](https://hubci.portaloas.udistrital.edu.co/udistrital/necesidades_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/necesidades_crud/status.svg?ref=refs/heads/release/1.0.0)](https://hubci.portaloas.udistrital.edu.co/udistrital/necesidades_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/necesidades_crud/status.svg?ref=refs/heads/master)](https://hubci.portaloas.udistrital.edu.co/udistrital/necesidades_crud) |
 
 ## Modelo de Datos
-[Modelo de Datos Relacional](https://user-images.githubusercontent.com/32855979/69995822-cc5bec80-151e-11ea-8dc5-1f077da866a1.png)
 
+[SVG](database/necesidades.svg) - [PGModeler](database/necesidades.dbm)
 
 ## Licencia
 
