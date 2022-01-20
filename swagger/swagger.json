@@ -64,7 +64,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.ActividadEconomicaNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.ActividadEconomicaNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -237,7 +240,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.ActividadEspecificaNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.ActividadEspecificaNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -410,7 +416,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.ActividadMeta"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.ActividadMeta"
+                            }
                         }
                     },
                     "404": {
@@ -583,7 +592,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.DependenciaNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.DependenciaNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -756,7 +768,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.DetallePrestacionServicio"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.DetallePrestacionServicio"
+                            }
                         }
                     },
                     "404": {
@@ -929,7 +944,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.DetalleServicioNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.DetalleServicioNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -1102,7 +1120,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.EstadoNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.EstadoNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -1275,7 +1296,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.FuenteActividad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.FuenteActividad"
+                            }
                         }
                     },
                     "404": {
@@ -1451,7 +1475,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.FuenteRubroNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.FuenteRubroNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -1624,7 +1651,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.MarcoLegal"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.MarcoLegal"
+                            }
                         }
                     },
                     "404": {
@@ -1797,7 +1827,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.MarcoLegalNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.MarcoLegalNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -1970,7 +2003,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.MetaRubroNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.MetaRubroNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -2143,7 +2179,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.ModalidadSeleccion"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.ModalidadSeleccion"
+                            }
                         }
                     },
                     "404": {
@@ -2316,7 +2355,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.Necesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Necesidad"
+                            }
                         }
                     },
                     "404": {
@@ -2489,7 +2531,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.NecesidadRechazada"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.NecesidadRechazada"
+                            }
                         }
                     },
                     "404": {
@@ -2662,7 +2707,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.ProductoCatalogoNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.ProductoCatalogoNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -2835,7 +2883,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.ProductoRubroNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.ProductoRubroNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -3008,7 +3059,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.RequisitoMinimo"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.RequisitoMinimo"
+                            }
                         }
                     },
                     "404": {
@@ -3181,7 +3235,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.RequisitoMinimoNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.RequisitoMinimoNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -3354,7 +3411,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.RubroNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.RubroNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -3527,7 +3587,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.TipoContratoNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.TipoContratoNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -3700,7 +3763,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.TipoDuracionNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.TipoDuracionNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -3873,7 +3939,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.TipoFinanciacionNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.TipoFinanciacionNecesidad"
+                            }
                         }
                     },
                     "404": {
@@ -4046,7 +4115,10 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.TipoNecesidad"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.TipoNecesidad"
+                            }
                         }
                     },
                     "404": {
