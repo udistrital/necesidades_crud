@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.1-beta" last-position="173,369" last-zoom="1"
+<dbmodel pgmodeler-ver="0.9.2" last-position="0,0" last-zoom="1" max-obj-count="28"
 	 default-schema="public" default-owner="postgres">
 <role name="test"
       superuser="true"
@@ -28,38 +28,33 @@ CAUTION: Do not modify this file unless you know what you are doing.
       password="********">
 </role>
 
-<database name="test" encoding="UTF8" lc-collate="en_US.utf8" lc-ctype="en_US.utf8">
+<database name="test" encoding="UTF8" lc-collate="en_US.utf8" lc-ctype="en_US.utf8" is-template="false" allow-conns="true">
 	<role name="test"/>
 	<tablespace name="pg_default"/>
 </database>
 
-<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+<schema name="public" layer="0" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
 </schema>
 
-<schema name="necesidades" rect-visible="true" fill-color="#dfa6de">
+<schema name="necesidades" layer="0" rect-visible="true" fill-color="#dfa6de">
 	<role name="desarrollooas"/>
 </schema>
 
-<sequence name="necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="necesidad">
+<table name="necesidad" layer="0" collapse-mode="2" max-obj-count="28">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="980" y="900"/>
+	<position x="760" y="800"/>
 	<column name="id" not-null="true" sequence="necesidades.necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
-	<column name="consecutivo_solicitud" not-null="true">
+	<column name="consecutivo" not-null="true">
 		<type name="integer" length="0"/>
-	</column>
-	<column name="consecutivo_necesidad">
-		<type name="integer" length="0"/>
+		<comment><![CDATA[Este Id viene de consecutivos CRUD o tomar de consecuctivos CRUD]]></comment>
 	</column>
 	<column name="vigencia" not-null="true">
 		<type name="character varying" length="0"/>
@@ -132,18 +127,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="marco_legal_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="marco_legal_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="marco_legal_necesidad">
+<table name="marco_legal_necesidad" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="1540" y="200"/>
+	<position x="1320" y="100"/>
 	<column name="id" not-null="true" sequence="necesidades.marco_legal_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -167,18 +159,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="tipo_financiacion_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="tipo_financiacion_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="tipo_financiacion_necesidad">
+<table name="tipo_financiacion_necesidad" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="300" y="740"/>
+	<position x="80" y="640"/>
 	<column name="id" not-null="true" sequence="necesidades.tipo_financiacion_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -205,18 +194,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="producto_rubro_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="producto_rubro_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="producto_rubro_necesidad">
+<table name="producto_rubro_necesidad" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2260" y="900"/>
+	<position x="2040" y="800"/>
 	<column name="id" not-null="true" sequence="necesidades.producto_rubro_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -243,18 +229,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="modalidad_seleccion_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="modalidad_seleccion_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="modalidad_seleccion">
+<table name="modalidad_seleccion" layer="0" collapse-mode="2" max-obj-count="9">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="320" y="320"/>
+	<position x="80" y="260"/>
 	<column name="id" not-null="true" sequence="necesidades.modalidad_seleccion_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -284,18 +267,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="estado_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="estado_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="estado_necesidad">
+<table name="estado_necesidad" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="300" y="1380"/>
+	<position x="80" y="1280"/>
 	<column name="id" not-null="true" sequence="necesidades.estado_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -322,18 +302,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="marco_legal_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="marco_legal_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="marco_legal">
+<table name="marco_legal" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="960" y="140"/>
+	<position x="740" y="80"/>
 	<column name="id" not-null="true" sequence="necesidades.marco_legal_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -357,18 +334,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="fuente_rubro_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="fuente_rubro_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="fuente_rubro_necesidad">
+<table name="fuente_rubro_necesidad" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2260" y="480"/>
+	<position x="2040" y="380"/>
 	<column name="id" not-null="true" sequence="necesidades.fuente_rubro_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -395,18 +369,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="actividad_meta_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="actividad_meta_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="actividad_meta">
+<table name="actividad_meta" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2860" y="760"/>
+	<position x="2640" y="660"/>
 	<column name="id" not-null="true" sequence="necesidades.actividad_meta_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -430,18 +401,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="fuente_actividad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="fuente_actividad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="fuente_actividad">
+<table name="fuente_actividad" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="3380" y="640"/>
+	<position x="3160" y="540"/>
 	<column name="id" not-null="true" sequence="necesidades.fuente_actividad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -468,18 +436,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="producto_catalogo_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="producto_catalogo_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="producto_catalogo_necesidad">
+<table name="producto_catalogo_necesidad" layer="0" collapse-mode="2" max-obj-count="12">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="1600" y="440"/>
+	<position x="1380" y="340"/>
 	<column name="id" not-null="true" sequence="necesidades.producto_catalogo_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -515,18 +480,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="tipo_contrato_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="tipo_contrato_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="tipo_contrato_necesidad">
+<table name="tipo_contrato_necesidad" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="320" y="540"/>
+	<position x="80" y="460"/>
 	<column name="id" not-null="true" sequence="necesidades.tipo_contrato_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -553,18 +515,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="rubro_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="rubro_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="rubro_necesidad">
+<table name="rubro_necesidad" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="1620" y="740"/>
+	<position x="1400" y="640"/>
 	<column name="id" not-null="true" sequence="necesidades.rubro_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -588,18 +547,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="necesidad_rechazada_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="necesidad_rechazada_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="necesidad_rechazada">
+<table name="necesidad_rechazada" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="1540" y="1340"/>
+	<position x="1220" y="1280"/>
 	<column name="id" not-null="true" sequence="necesidades.necesidad_rechazada_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -626,18 +582,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="requisito_minimo_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="requisito_minimo_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="requisito_minimo">
+<table name="requisito_minimo" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2260" y="280"/>
+	<position x="2040" y="180"/>
 	<column name="id" not-null="true" sequence="necesidades.requisito_minimo_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -661,18 +614,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="requisito_minimo_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="requisito_minimo_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="requisito_minimo_necesidad">
+<table name="requisito_minimo_necesidad" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2840" y="960"/>
+	<position x="2620" y="860"/>
 	<column name="id" not-null="true" sequence="necesidades.requisito_minimo_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -696,18 +646,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="dependencia_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="dependencia_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="dependencia_necesidad">
+<table name="dependencia_necesidad" layer="0" collapse-mode="2" max-obj-count="10">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="300" y="1140"/>
+	<position x="80" y="1040"/>
 	<column name="id" not-null="true" sequence="necesidades.dependencia_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -740,18 +687,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="detalle_prestacion_servicio_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="detalle_prestacion_servicio_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="detalle_prestacion_servicio">
+<table name="detalle_prestacion_servicio" layer="0" collapse-mode="2" max-obj-count="9">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2400" y="1320"/>
+	<position x="2120" y="1240"/>
 	<column name="id" not-null="true" sequence="necesidades.detalle_prestacion_servicio_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -781,18 +725,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="actividad_especifica_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="actividad_especifica_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="actividad_especifica_necesidad">
+<table name="actividad_especifica_necesidad" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2840" y="1400"/>
+	<position x="2620" y="1300"/>
 	<column name="id" not-null="true" sequence="necesidades.actividad_especifica_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -816,18 +757,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="actividad_economica_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="actividad_economica_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="actividad_economica_necesidad">
+<table name="actividad_economica_necesidad" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="1960" y="1380"/>
+	<position x="1640" y="1300"/>
 	<column name="id" not-null="true" sequence="necesidades.actividad_economica_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -851,18 +789,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="tipo_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="tipo_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="tipo_necesidad">
+<table name="tipo_necesidad" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="300" y="940"/>
+	<position x="80" y="840"/>
 	<column name="id" not-null="true" sequence="necesidades.tipo_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -889,18 +824,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="tipo_duracion_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="tipo_duracion_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="tipo_duracion_necesidad">
+<table name="tipo_duracion_necesidad" layer="0" collapse-mode="2" max-obj-count="8">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="300" y="120"/>
+	<position x="80" y="60"/>
 	<column name="id" not-null="true" sequence="necesidades.tipo_duracion_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -927,18 +859,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="meta_rubro_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="meta_rubro_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="meta_rubro_necesidad">
+<table name="meta_rubro_necesidad" layer="0" collapse-mode="2" max-obj-count="7">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2260" y="700"/>
+	<position x="2040" y="600"/>
 	<column name="id" not-null="true" sequence="necesidades.meta_rubro_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -962,18 +891,15 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<sequence name="detalle_servicio_necesidad_id_seq"
-	 start="1" increment="1"
-	 min-value="1" max-value="2147483647"
-	 cache="1" cycle="false">
+<sequence name="detalle_servicio_necesidad_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
 </sequence>
 
-<table name="detalle_servicio_necesidad">
+<table name="detalle_servicio_necesidad" layer="0" collapse-mode="2" max-obj-count="10">
 	<schema name="necesidades"/>
 	<role name="desarrollooas"/>
-	<position x="2840" y="1160"/>
+	<position x="2620" y="1060"/>
 	<column name="id" not-null="true" sequence="necesidades.detalle_servicio_necesidad_id_seq">
 		<type name="integer" length="0"/>
 	</column>
@@ -1144,142 +1070,142 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
-<relationship name="rel_necesidad_tipo_duracion_necesidad" type="relfk"
+<relationship name="rel_necesidad_tipo_duracion_necesidad" type="relfk" layer="0"
 	 custom-color="#59001a"
 	 src-table="necesidades.necesidad"
-	 dst-table="necesidades.tipo_duracion_necesidad"
+	 dst-table="necesidades.tipo_duracion_necesidad" reference-fk="fk_necesidad_tipo_duracion_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_necesidad_tipo_necesidad" type="relfk"
+<relationship name="rel_necesidad_tipo_necesidad" type="relfk" layer="0"
 	 custom-color="#68a038"
 	 src-table="necesidades.necesidad"
-	 dst-table="necesidades.tipo_necesidad"
+	 dst-table="necesidades.tipo_necesidad" reference-fk="fk_necesidad_tipo_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_necesidad_tipo_contrato_necesidad" type="relfk"
+<relationship name="rel_necesidad_tipo_contrato_necesidad" type="relfk" layer="0"
 	 custom-color="#6fe48d"
 	 src-table="necesidades.necesidad"
-	 dst-table="necesidades.tipo_contrato_necesidad"
+	 dst-table="necesidades.tipo_contrato_necesidad" reference-fk="fk_necesidad_tipo_contrato_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_necesidad_estado_necesidad" type="relfk"
+<relationship name="rel_necesidad_estado_necesidad" type="relfk" layer="0"
 	 custom-color="#a92ae3"
 	 src-table="necesidades.necesidad"
-	 dst-table="necesidades.estado_necesidad"
+	 dst-table="necesidades.estado_necesidad" reference-fk="fk_necesidad_estado_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_necesidad_modalidad_seleccion" type="relfk"
+<relationship name="rel_necesidad_modalidad_seleccion" type="relfk" layer="0"
 	 custom-color="#777549"
 	 src-table="necesidades.necesidad"
-	 dst-table="necesidades.modalidad_seleccion"
+	 dst-table="necesidades.modalidad_seleccion" reference-fk="fk_necesidad_estado_modalidad_seleccion"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_necesidad_tipo_financiacion_necesidad" type="relfk"
+<relationship name="rel_necesidad_tipo_financiacion_necesidad" type="relfk" layer="0"
 	 custom-color="#e30b32"
 	 src-table="necesidades.necesidad"
-	 dst-table="necesidades.tipo_financiacion_necesidad"
+	 dst-table="necesidades.tipo_financiacion_necesidad" reference-fk="fk_necesidad_tipo_financiacion_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_necesidad_dependencia_necesidad" type="relfk"
+<relationship name="rel_necesidad_dependencia_necesidad" type="relfk" layer="0"
 	 custom-color="#3e4220"
 	 src-table="necesidades.necesidad"
-	 dst-table="necesidades.dependencia_necesidad"
+	 dst-table="necesidades.dependencia_necesidad" reference-fk="fk_necesidad_dependencia_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_marco_legal_necesidad_marco_legal" type="relfk"
+<relationship name="rel_marco_legal_necesidad_marco_legal" type="relfk" layer="0"
 	 custom-color="#b1413d"
 	 src-table="necesidades.marco_legal_necesidad"
-	 dst-table="necesidades.marco_legal"
+	 dst-table="necesidades.marco_legal" reference-fk="fk_marco_legal_necesidad_marco_legal"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_marco_legal_necesidad_necesidad" type="relfk"
+<relationship name="rel_marco_legal_necesidad_necesidad" type="relfk" layer="0"
 	 custom-color="#bcb686"
 	 src-table="necesidades.marco_legal_necesidad"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_marco_legal_necesidad_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_producto_rubro_necesidad_rubro_necesidad" type="relfk"
+<relationship name="rel_producto_rubro_necesidad_rubro_necesidad" type="relfk" layer="0"
 	 custom-color="#8935d3"
 	 src-table="necesidades.producto_rubro_necesidad"
-	 dst-table="necesidades.rubro_necesidad"
+	 dst-table="necesidades.rubro_necesidad" reference-fk="fk_producto_rubro_necesidad_rubro_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_fuente_rubro_necesidad_rubro_necesidad" type="relfk"
+<relationship name="rel_fuente_rubro_necesidad_rubro_necesidad" type="relfk" layer="0"
 	 custom-color="#3f68a9"
 	 src-table="necesidades.fuente_rubro_necesidad"
-	 dst-table="necesidades.rubro_necesidad"
+	 dst-table="necesidades.rubro_necesidad" reference-fk="fk_fuente_rubro_necesidad_rubro_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_actividad_meta_meta_rubro_necesidad" type="relfk"
+<relationship name="rel_actividad_meta_meta_rubro_necesidad" type="relfk" layer="0"
 	 custom-color="#5ab8fc"
 	 src-table="necesidades.actividad_meta"
-	 dst-table="necesidades.meta_rubro_necesidad"
+	 dst-table="necesidades.meta_rubro_necesidad" reference-fk="fk_actividad_meta_rubro_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_fuente_actividad_actividad_meta" type="relfk"
+<relationship name="rel_fuente_actividad_actividad_meta" type="relfk" layer="0"
 	 custom-color="#5bc7b8"
 	 src-table="necesidades.fuente_actividad"
-	 dst-table="necesidades.actividad_meta"
+	 dst-table="necesidades.actividad_meta" reference-fk="fk_fuente_actividad_meta"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_producto_catalogo_necesidad_necesidad" type="relfk"
+<relationship name="rel_producto_catalogo_necesidad_necesidad" type="relfk" layer="0"
 	 custom-color="#71e93f"
 	 src-table="necesidades.producto_catalogo_necesidad"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_producto_catalogo_necesidad_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_rubro_necesidad_necesidad" type="relfk"
+<relationship name="rel_rubro_necesidad_necesidad" type="relfk" layer="0"
 	 custom-color="#4da6d5"
 	 src-table="necesidades.rubro_necesidad"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_rubro_necesidad_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_necesidad_rechazada_necesidad" type="relfk"
+<relationship name="rel_necesidad_rechazada_necesidad" type="relfk" layer="0"
 	 custom-color="#fdc3e5"
 	 src-table="necesidades.necesidad_rechazada"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_necesidad_rechazada_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_requisito_minimo_producto_catalogo_necesidad" type="relfk"
+<relationship name="rel_requisito_minimo_producto_catalogo_necesidad" type="relfk" layer="0"
 	 custom-color="#008a2b"
 	 src-table="necesidades.requisito_minimo"
-	 dst-table="necesidades.producto_catalogo_necesidad"
+	 dst-table="necesidades.producto_catalogo_necesidad" reference-fk="fk_requisito_minimo_producto_catalogo_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_requisito_minimo_necesidad_necesidad" type="relfk"
+<relationship name="rel_requisito_minimo_necesidad_necesidad" type="relfk" layer="0"
 	 custom-color="#ab95af"
 	 src-table="necesidades.requisito_minimo_necesidad"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_requisito_minimo_necesidad_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_detalle_prestacion_servicio_necesidad" type="relfk"
+<relationship name="rel_detalle_prestacion_servicio_necesidad" type="relfk" layer="0"
 	 custom-color="#61896a"
 	 src-table="necesidades.detalle_prestacion_servicio"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_detalle_prestacion_servicio_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_actividad_especifica_necesidad_necesidad" type="relfk"
+<relationship name="rel_actividad_especifica_necesidad_necesidad" type="relfk" layer="0"
 	 custom-color="#0f7e16"
 	 src-table="necesidades.actividad_especifica_necesidad"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_actividad_especifica_necesidad_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_actividad_economica_necesidad_necesidad" type="relfk"
+<relationship name="rel_actividad_economica_necesidad_necesidad" type="relfk" layer="0"
 	 custom-color="#9c50b5"
 	 src-table="necesidades.actividad_economica_necesidad"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_actividad_economica_necesidad_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_meta_rubro_necesidad_rubro_necesidad" type="relfk"
+<relationship name="rel_meta_rubro_necesidad_rubro_necesidad" type="relfk" layer="0"
 	 custom-color="#cb6e65"
 	 src-table="necesidades.meta_rubro_necesidad"
-	 dst-table="necesidades.rubro_necesidad"
+	 dst-table="necesidades.rubro_necesidad" reference-fk="fk_meta_rubro_necesidad_rubro_necesidad"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_detalle_servicio_necesidad_necesidad" type="relfk"
+<relationship name="rel_detalle_servicio_necesidad_necesidad" type="relfk" layer="0"
 	 custom-color="#7b73d4"
 	 src-table="necesidades.detalle_servicio_necesidad"
-	 dst-table="necesidades.necesidad"
+	 dst-table="necesidades.necesidad" reference-fk="fk_detalle_prestacion_servicio_necesidad_cp"
 	 src-required="false" dst-required="false"/>
 
 </dbmodel>
