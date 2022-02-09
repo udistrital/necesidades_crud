@@ -18,7 +18,7 @@ func TestCrudOperationNecesidad(t *testing.T) {
 		}
 	}()
 	testInsertObj := models.Necesidad{
-		ConsecutivoNecesidad: 1,
+		Consecutivo:          1,
 		Justificacion:        "testNecesidad",
 		EstudioMercado:       "testNecesidad",
 		AnalisisRiesgo:       "testNecesidad",
@@ -27,7 +27,7 @@ func TestCrudOperationNecesidad(t *testing.T) {
 		JustificacionRechazo: 1,
 	}
 	testUpdateObj := models.Necesidad{
-		ConsecutivoNecesidad: 1,
+		Consecutivo:          1,
 		Justificacion:        "updateNecesidad",
 		EstudioMercado:       "updateNecesidad",
 		AnalisisRiesgo:       "updateNecesidad",
