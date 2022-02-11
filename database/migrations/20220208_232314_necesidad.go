@@ -27,6 +27,6 @@ func (m *Necesidad_20220208_232314) Up() {
 // Reverse the migrations
 func (m *Necesidad_20220208_232314) Down() {
 	// use m.SQL("DROP TABLE ...") to reverse schema update
+	m.SQL("ALTER TABLE necesidades.necesidad ADD COLUMN consecutivo_necesidad int4 NULL;")
 	m.SQL("ALTER TABLE necesidades.necesidad RENAME COLUMN consecutivo TO consecutivo_solicitud;")
-	m.SQL("ALTER TABLE necesidades.necesidad ADD consecutivo_necesidad int4 NULL;")
 }
