@@ -4663,11 +4663,7 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "ConsecutivoNecesidad": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "ConsecutivoSolicitud": {
+                "Consecutivo": {
                     "type": "integer",
                     "format": "int64"
                 },
