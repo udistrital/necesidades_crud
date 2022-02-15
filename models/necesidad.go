@@ -12,7 +12,7 @@ import (
 
 type Necesidad struct {
 	Id                          int                        `orm:"column(id);pk;auto"`
-	Consecutivo                 int                        `orm:"column(consecutivo_id)"`
+	Consecutivo                 int                        `orm:"column(consecutivo)"`
 	Vigencia                    string                     `orm:"column(vigencia)"`
 	Objeto                      string                     `orm:"column(objeto)"`
 	Justificacion               string                     `orm:"column(justificacion);null"`
