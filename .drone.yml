@@ -1,6 +1,11 @@
 kind: pipeline
 name: oas_api_ci
 
+trigger:
+  event:
+    exclude:
+      - tag
+
 steps:
 - name: check_readme
   failure: ignore
@@ -188,6 +193,7 @@ steps:
     - push
 
 - name: notify_telegram
+  failure: ignore
   image: appleboy/drone-telegram
   settings:
     token:
