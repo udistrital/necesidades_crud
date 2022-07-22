@@ -23,7 +23,7 @@ func init() {
 
 // Run the migrations
 func (m *DependenciaNecesidad_20220722_155258) Up() {
-	file, err := ioutil.ReadFile("../scripts/agregar_columnas_dependencia_necesidad_up.sql")
+	file, err := ioutil.ReadFile("../scripts/20220722_155258_dependencia_necesidad_up.sql")
 
 	if err != nil {
 		// handle error
@@ -43,7 +43,7 @@ func (m *DependenciaNecesidad_20220722_155258) Up() {
 // Reverse the migrations
 func (m *DependenciaNecesidad_20220722_155258) Down() {
 	// use m.SQL("DROP TABLE ...") to reverse schema update
-	file, err := ioutil.ReadFile("../scripts/agregar_columnas_dependencia_necesidad_down.sql")
+	file, err := ioutil.ReadFile("../scripts/20220722_155258_dependencia_necesidad_down.sql")
 
 	if err != nil {
 		// handle error
