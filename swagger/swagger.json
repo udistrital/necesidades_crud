@@ -4333,6 +4333,18 @@
                 "Activo": {
                     "type": "boolean"
                 },
+                "DependenciaDestino": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "DependenciaSolicitante": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "DependenciaSupervisor": {
+                    "type": "integer",
+                    "format": "int64"
+                },
                 "FechaCreacion": {
                     "type": "string",
                     "format": "datetime"
@@ -4358,6 +4370,10 @@
                     "format": "int64"
                 },
                 "OrdenadorGastoId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "RolOrdenadorGasto": {
                     "type": "integer",
                     "format": "int64"
                 },
