@@ -1,8 +1,8 @@
 ALTER TABLE necesidades."dependencia_necesidad"
-ADD COLUMN IF NOT EXISTS dep_solicitante_id int NOT NULL;
+ADD COLUMN IF NOT EXISTS dep_solicitante_id int NOT NULL DEFAULT 0;
 
 ALTER TABLE necesidades."dependencia_necesidad"
-ADD COLUMN IF NOT EXISTS dep_destino_id int NOT NULL;
+ADD COLUMN IF NOT EXISTS dep_destino_id int NOT NULL DEFAULT 0;
 
 ALTER TABLE necesidades."dependencia_necesidad"
 ADD COLUMN IF NOT EXISTS dep_supervisor_id int;
