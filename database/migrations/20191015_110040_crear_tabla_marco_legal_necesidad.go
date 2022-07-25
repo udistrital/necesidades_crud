@@ -21,7 +21,6 @@ func init() {
 func (m *CrearTablaMarcoLegalNecesidad_20191015_110040) Up() {
 	// use m.SQL("CREATE TABLE ...") to make schema update
 	m.SQL("CREATE TABLE necesidades.marco_legal_necesidad (id serial NOT NULL,marco_legal_id integer NOT NULL,necesidad_id integer NOT NULL,activo boolean NOT NULL DEFAULT true,fecha_creacion timestamp NOT NULL,fecha_modificacion timestamp NOT NULL,CONSTRAINT pk_marco_legal_necesidad PRIMARY KEY (id));")
-	m.SQL("ALTER TABLE necesidades.marco_legal_necesidad OWNER TO desarrollooas;")
 }
 
 // Reverse the migrations

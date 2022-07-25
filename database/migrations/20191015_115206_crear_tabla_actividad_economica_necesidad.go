@@ -21,7 +21,6 @@ func init() {
 func (m *CrearTablaActividadEconomicaNecesidad_20191015_115206) Up() {
 	// use m.SQL("CREATE TABLE ...") to make schema update
 	m.SQL("CREATE TABLE necesidades.actividad_economica_necesidad (id serial NOT NULL,actividad_economica_id integer NOT NULL,necesidad_id integer NOT NULL,activo boolean NOT NULL DEFAULT true,fecha_creacion timestamp NOT NULL,fecha_modificacion timestamp NOT NULL,CONSTRAINT pk_actividad_economica_necesidad PRIMARY KEY (id));")
-	m.SQL("ALTER TABLE necesidades.actividad_economica_necesidad OWNER TO desarrollooas;")
 
 }
 
