@@ -12,7 +12,7 @@ import (
 
 type ActividadMeta struct {
 	Id                   int                 `orm:"column(id);pk;auto"`
-	ActividadId          string                 `orm:"column(actividad_id)"`
+	ActividadId          string              `orm:"column(actividad_id)"`
 	MetaRubroNecesidadId *MetaRubroNecesidad `orm:"column(meta_rubro_necesidad_id);rel(fk)"`
 	Activo               bool                `orm:"column(activo)"`
 	FechaCreacion        time.Time           `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
@@ -58,6 +58,9 @@ func GetAllActividadMeta(query map[string]string, fields []string, sortby []stri
 		k = strings.Replace(k, ".", "__", -1)
 		if strings.Contains(k, "isnull") {
 			qs = qs.Filter(k, (v == "true" || v == "1"))
+		} else if strings.HasSuffix(k, "__in") {
+			arr := strings.Split(v, "|")
+			qs = qs.Filter(k, arr)
 		} else {
 			qs = qs.Filter(k, v)
 		}

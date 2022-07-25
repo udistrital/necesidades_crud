@@ -11,15 +11,19 @@ import (
 )
 
 type DependenciaNecesidad struct {
-	Id                   int       `orm:"column(id);pk;auto"`
-	JefeDepSolicitanteId int       `orm:"column(jefe_dep_solicitante_id)"`
-	JefeDepDestinoId     int       `orm:"column(jefe_dep_destino_id)"`
-	SupervisorId         int       `orm:"column(supervisor_id);null"`
-	InterventorId        int       `orm:"column(interventor_id);null"`
-	OrdenadorGastoId     int       `orm:"column(ordenador_gasto_id);null"`
-	Activo               bool      `orm:"column(activo)"`
-	FechaCreacion        time.Time `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
-	FechaModificacion    time.Time `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
+	Id                     int       `orm:"column(id);pk;auto"`
+	JefeDepSolicitanteId   int       `orm:"column(jefe_dep_solicitante_id)"`
+	JefeDepDestinoId       int       `orm:"column(jefe_dep_destino_id)"`
+	SupervisorId           int       `orm:"column(supervisor_id);null"`
+	InterventorId          int       `orm:"column(interventor_id);null"`
+	OrdenadorGastoId       int       `orm:"column(ordenador_gasto_id);null"`
+	Activo                 bool      `orm:"column(activo)"`
+	FechaCreacion          time.Time `orm:"auto_now_add;column(fecha_creacion);type(timestamp without time zone)"`
+	FechaModificacion      time.Time `orm:"auto_now;column(fecha_modificacion);type(timestamp without time zone)"`
+	DependenciaSolicitante int       `orm:"column(dep_solicitante_id)"`
+	DependenciaDestino     int       `orm:"column(dep_destino_id)"`
+	DependenciaSupervisor  int       `orm:"column(dep_supervisor_id);null"`
+	RolOrdenadorGasto      int       `orm:"column(rol_ordenador_gasto_id);null"`
 }
 
 func (t *DependenciaNecesidad) TableName() string {
@@ -61,6 +65,9 @@ func GetAllDependenciaNecesidad(query map[string]string, fields []string, sortby
 		k = strings.Replace(k, ".", "__", -1)
 		if strings.Contains(k, "isnull") {
 			qs = qs.Filter(k, (v == "true" || v == "1"))
+		} else if strings.HasSuffix(k, "__in") {
+			arr := strings.Split(v, "|")
+			qs = qs.Filter(k, arr)
 		} else {
 			qs = qs.Filter(k, v)
 		}
