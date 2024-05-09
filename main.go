@@ -1,6 +1,8 @@
 package main
 
 import (
+	"net/url"
+
 	_ "github.com/udistrital/necesidades_crud/routers"
 
 	"github.com/astaxie/beego"
@@ -18,7 +20,7 @@ func main() {
 	orm.Debug = true
 	orm.RegisterDataBase("default", "postgres", "postgres://"+
 		beego.AppConfig.String("PGuser")+
-		":"+beego.AppConfig.String("PGpass")+
+		":"+url.QueryEscape(beego.AppConfig.String("PGpass"))+
 		"@"+beego.AppConfig.String("PGurls")+
 		":"+beego.AppConfig.String("PGport")+
 		"/"+beego.AppConfig.String("PGdb")+
