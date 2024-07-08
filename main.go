@@ -14,6 +14,7 @@ import (
 	apistatus "github.com/udistrital/utils_oas/apiStatusLib"
 	"github.com/udistrital/utils_oas/auditoria"
 	"github.com/udistrital/utils_oas/customerror"
+	"github.com/udistrital/utils_oas/xray"
 )
 
 func main() {
@@ -46,6 +47,7 @@ func main() {
 	logs.SetLogger(logs.AdapterFile, `{"filename":"/var/log/beego/necesidades_crud/necesidades_crud.log"}`)
 
 	//Prueba de auditoria
+	xray.InitXRay()
 	auditoria.InitMiddleware()
 	apistatus.Init()
 	beego.Run()
